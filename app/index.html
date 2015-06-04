@@ -15,7 +15,29 @@
 </head>
 <body>
 
-  <div ng-view></div>
+  <div class="container">
+
+    <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9" id="content">
+        	<div ng-view></div>
+        </div>
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+            <div class="list-group">
+                <a href="#issue/new" class="list-group-item">Новое исследование</a>
+                <a href="#issue" class="list-group-item">Список проведенных исследований</a>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <hr>
+        <p>© Денис Моисеев 2015</p>
+    </footer>
+
+</div>
 
 </body>
-</html>
+</html> 
