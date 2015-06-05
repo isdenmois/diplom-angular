@@ -1,0 +1,81 @@
+<form id="new-issue" class="form-horizontal" ng-submit="addRequest()">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Новое иследование</legend>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="select-algo">Алгоритм</label>
+
+            <div class="col-md-8">
+                <select
+                        id="select-algo"
+                        ng-model="algorithm"
+                        ng-options="algo.title for algo in algorithms"
+                        name="select-algo"
+                        class="form-control">
+                </select>
+            </div>
+        </div>
+
+        <!-- Multiple Radios -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="radios-figure">Область</label>
+
+            <div class="col-md-4">
+                <div class="radio">
+                    <label for="radios-oblast-0">
+                        <input type="radio" ng-model="figure" name="radios-oblast" id="radios-oblast-0" value="1">
+                        Квадрат
+                    </label>
+                </div>
+                <div class="radio">
+                    <label for="radios-oblast-2">
+                        <input type="radio" ng-model="figure" name="radios-oblast" id="radios-oblast-2" value="2">
+                        Прямоугольник
+                    </label>
+                </div>
+                <div class="radio">
+                    <label for="radios-oblast-1">
+                        <input type="radio" ng-model="figure" name="radios-oblast" id="radios-oblast-1" value="3">
+                        Круг
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="count">Количество</label>
+
+            <div class="col-md-4">
+                <input id="count" ng-model="count" name="count" type="text" placeholder="1000"
+                       class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="count">Размер</label>
+
+            <div class="col-md-4">
+                <input id="size" ng-model="size" name="count" type="text" placeholder="10" class="form-control input-md"
+                       required="">
+
+            </div>
+        </div>
+
+        <!-- Button (Double) -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="button-get-values"></label>
+
+            <div class="col-md-8">
+                <button id="button-get-values" name="button-get-values" class="btn btn-info">Отправить заявку</button>
+                <div id="button-cancel" class="btn btn-danger" back-button>Отмена</div>
+            </div>
+        </div>
+
+    </fieldset>
+</form>

@@ -5,7 +5,9 @@
 var adhocApp = angular.module('adhocApp', [
   'ngRoute',
   'adhocControllers',
-  'adhocServices'
+  'adhocServices',
+  'backButtonDirective',
+  'flashFactory'
 ]);
 
 adhocApp.config(['$routeProvider',
@@ -14,6 +16,10 @@ adhocApp.config(['$routeProvider',
       when('/issue', {
         templateUrl: 'views/issue-list.html',
         controller: 'IssueListController'
+      }).
+      when('/new', {
+        templateUrl: 'views/new-issue.html',
+        controller: 'AlgorithmController'
       }).
       otherwise({
         redirectTo: '/issue'
