@@ -1,9 +1,9 @@
 {
-  "version": "0.1.0",
+  "version": "0.0.8",
   "private": true,
   "name": "diplomo-project",
   "description": "A diplomo written with AngularJS",
-  "repository": "https://github.com/angular/angular-phonecat",
+  "repository": "https://github.com/isdenmois/diplomo-project",
   "license": "GPL",
   "devDependencies": {
     "http-server": "^0.6.1",
