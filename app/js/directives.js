@@ -1,16 +1,26 @@
+'use strict';
+
+/* Directives */
+
 angular
-  .module('backButtonDirective', [])
-  .directive('backButton', function () {
-    return {
-      restrict: 'A',
+  .module('adhocDirectives', [])
+  .directive('backButton', backButton)
+;
 
-      link: function (scope, element) {
-        element.bind('click', goBack);
+/**
+ * Directive for change location to previous path.
+ */
+function backButton() {
+  return {
+    restrict: 'A',
 
-        function goBack() {
-          history.back();
-          scope.$apply();
-        }
+    link: function (scope, element) {
+      element.bind('click', goBack);
+
+      function goBack() {
+        history.back();
+        scope.$apply();
       }
     }
-  });
+  }
+}

@@ -6,8 +6,7 @@ var adhocApp = angular.module('adhocApp', [
   'ngRoute',
   'adhocControllers',
   'adhocServices',
-  'backButtonDirective',
-  'flashFactory'
+  'adhocDirectives'
 ]);
 
 adhocApp.config(['$routeProvider',
