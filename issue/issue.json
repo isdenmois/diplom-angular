@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "algorithm": "mds",
+    "area": "circle",
+    "size": 8,
+    "step": 100,
+    "completed": true
+  },
+  {
+    "id": 2,
+    "algorithm": "bridge",
+    "area": "square",
+    "size": 4,
+    "step": 1000,
+    "completed": true
+  },
+  {
+    "id": 3,
+    "algorithm": "bridge",
+    "area": "rectangle",
+    "size": "4x10",
+    "step": 10000,
+    "completed": false
+  },
+  {
+    "id": 4,
+    "algorithm": "mds",
+    "area": "square",
+    "size": 10,
+    "step": 200,
+    "completed": true
+  }
+]

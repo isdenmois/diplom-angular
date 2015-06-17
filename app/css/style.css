@@ -10,3 +10,11 @@ footer {
     position: absolute;
     bottom: 0px;
 }
+
+.highcharts-container > svg > text[text-anchor="end"] {
+  display: none;
+}
+
+#content .params {
+  margin-top: 25px;
+}

@@ -1,8 +1,8 @@
 {
   "name": "diplomo-project",
   "description": "A diplomo written with AngularJS",
-  "version": "0.0.8",
-  "homepage": "https://github.com/isdenmois/diplomo-project",
+  "version": "0.27",
+  "homepage": "https://bitbucket.org/isdenmois/diplomo-project",
   "license": "GPL",
   "private": true,
   "dependencies": {
@@ -10,6 +10,7 @@
     "bootstrap": "3.3.4",
     "angular": "~1.4.0",
     "angular-route": "~1.4.0",
-    "angular-resource": "~1.4.0"
+    "angular-resource": "~1.4.0",
+    "highcharts": "~4.1.6"
   }
 }

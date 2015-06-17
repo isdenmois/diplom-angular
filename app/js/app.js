@@ -20,6 +20,10 @@ adhocApp.config(['$routeProvider',
         templateUrl: 'views/new-issue.html',
         controller: 'AlgorithmController'
       }).
+      when('/issue/:id', {
+        templateUrl: 'views/result.html',
+        controller: 'ResultController'
+      }).
       otherwise({
         redirectTo: '/issue'
       });

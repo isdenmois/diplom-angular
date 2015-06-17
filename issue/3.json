@@ -1,0 +1,8 @@
+{
+  "id": 3,
+  "algorithm": "bridge",
+  "area": "rectangle",
+  "size": "4x10",
+  "step": 10000,
+  "completed": false
+}

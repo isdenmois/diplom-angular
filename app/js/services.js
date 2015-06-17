@@ -7,6 +7,7 @@ angular
   .factory('Issue', ['$resource', Issue])
   .factory('Algorithm', ['$resource', Algorithms])
   .factory('flash', flash)
+  .factory('humanNames', humanNames);
 ;
 
 
@@ -14,9 +15,7 @@ angular
  * Service for retrieve issues.
  */
 function Issue($resource) {
-  return $resource('/issue/:issueId.json', {}, {
-    query: {method: 'GET', params: {issueId: 'issue'}, isArray: true}
-  });
+  return $resource('/issue/:issueId.json', {issueId: 'issue'});
 }
 
 
@@ -45,6 +44,49 @@ function flash($rootScope) {
     },
     getMessage: function () {
       return currentMessage;
+    }
+  };
+}
+
+/**
+ * Service for human-readable naming.
+ */
+function humanNames() {
+  return {
+    human: function (word) {
+      name = '';
+
+      switch (word) {
+        case 'mds':
+          name = 'Минимальное доминирующее множество';
+          break;
+
+        case 'bridge':
+          name = 'Поиск мостов';
+          break;
+
+        case 'circle':
+          name = 'Круг';
+          break;
+
+        case 'square':
+          name = 'Квадрат';
+          break;
+
+        case 'rectangle':
+          name = 'Прямоугольник';
+          break;
+
+        case 'dispersia':
+          name = 'Дисперсия';
+          break;
+
+        case 'math_exp':
+          name = 'Математическое ожидание';
+          break;
+      }
+
+      return name;
     }
   };
 }
