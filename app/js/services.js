@@ -4,8 +4,7 @@
 
 angular
   .module('adhocServices', ['ngResource'])
-  .factory('Issue', ['$resource', Issue])
-  .factory('Algorithm', ['$resource', Algorithms])
+  .factory('Serve', ['$resource', Serve])
   .factory('flash', flash)
   .factory('humanNames', humanNames);
 ;
@@ -14,16 +13,8 @@ angular
 /**
  * Service for retrieve issues.
  */
-function Issue($resource) {
-  return $resource('/issue/:issueId.json', {issueId: 'issue'});
-}
-
-
-/**
- * Service for retrieve algorithms.
- */
-function Algorithms($resource) {
-  return $resource('/algorithms', {}, {query: {method: 'GET', isArray: true}});
+function Serve($resource) {
+  return $resource('static/:issueId.json', {issueId: 'issue'});
 }
 
 
@@ -54,7 +45,7 @@ function flash($rootScope) {
 function humanNames() {
   return {
     human: function (word) {
-      name = '';
+      var name = '';
 
       switch (word) {
         case 'mds':
