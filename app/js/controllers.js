@@ -4,16 +4,16 @@
 
 angular
   .module('adhocControllers', [])
-  .controller('IssueListController', ['$scope', 'flash', 'humanNames', 'Issue', IssueListController])
-  .controller('AlgorithmController', ['$scope', '$location', 'flash', 'Algorithm', AlgorithmController])
-  .controller('ResultController', ['$scope', '$routeParams', 'humanNames', 'Issue', ResultController])
+  .controller('IssueListController', ['$scope', 'flash', 'humanNames', 'Serve', IssueListController])
+  .controller('AlgorithmController', ['$scope', '$location', 'flash', 'Serve', AlgorithmController])
+  .controller('ResultController', ['$scope', '$routeParams', 'humanNames', 'Serve', ResultController])
 ;
 
 /**
- * Controller for Issue List view.
+ * Controller for Serve List view.
  */
-function IssueListController($scope, flash, humanNames, Issue) {
-  Issue.query()
+function IssueListController($scope, flash, humanNames, Serve) {
+  Serve.query()
     .$promise.then(function (result) {
       angular.forEach(result, function(index) {
         var name = humanNames.human(index.algorithm) + '. ';
@@ -31,8 +31,8 @@ function IssueListController($scope, flash, humanNames, Issue) {
 /**
  * Controller for new request view.
  */
-function AlgorithmController($scope, $location, flash, Algorithm) {
-  Algorithm.query()
+function AlgorithmController($scope, $location, flash, Serve) {
+  Serve.query({issueId:'algorithms'})
     .$promise.then(function (data) {
       $scope.algorithms = data;
       $scope.algorithm = data[0];
@@ -54,10 +54,10 @@ function AlgorithmController($scope, $location, flash, Algorithm) {
 /**
  * Controller for result view.
  */
-function ResultController($scope, $routeParams, humanNames, Issue) {
+function ResultController($scope, $routeParams, humanNames, Serve) {
   var id = ($routeParams.id || false);
   if (id) {
-    Issue.get({issueId: id})
+    Serve.get({issueId: id})
       .$promise.then(function (result) {
         $scope.params = [
           {
